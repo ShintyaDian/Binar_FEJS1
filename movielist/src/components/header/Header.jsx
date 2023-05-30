@@ -8,11 +8,7 @@ import "./header.scss";
 import Button, { OutlineButton } from "../button/Button";
 
 import logo from "../../assets/film (1).png";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/actions/auth";
-// import { AuthContext } from '../../context/AuthContext';
-// import { onAuthStateChanged, signOut } from 'firebase/auth';
-// import { auth } from '../../firebase';
+import { useSelector } from "react-redux";
 
 const MovieSearch = (props) => {
   const navigate = useNavigate();
@@ -52,18 +48,6 @@ const MovieSearch = (props) => {
 };
 
 const Header = (props) => {
-  // const [user, setUser] = useState(null)
-
-  // useEffect(() => {
-  //     onAuthStateChanged(auth, (user) => {
-  //       setUser(user)
-  //     })
-  //   }, [])
-
-  // const {dispatch} = useContext(AuthContext)
-
-  const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const headerRef = useRef(null);
@@ -149,18 +133,12 @@ const Header = (props) => {
             <MovieSearch keyword={keyword} />
           </div>
           <div className="header__list">
-            <Link to="/home" className="home">
-              Home
-            </Link>
             <Link to="/movie" className="movies">
               All Movies
             </Link>
-            <button
-              className="btn-logout"
-              onClick={() => dispatch(logout(navigate))}
-            >
-              Logout
-            </button>
+            <Link to="/profile" className="profile">
+              Profile
+            </Link>
           </div>
         </div>
       ) : (

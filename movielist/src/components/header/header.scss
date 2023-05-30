@@ -61,7 +61,7 @@
     transition: height 0.3s ease, background-color 0.3s ease;
 
     &.shrink {
-        background-color: lightgray;
+        background-color: rgb(165, 157, 157);
     }
 
     &__wrap {
@@ -94,7 +94,7 @@
 }
 
 .movies,
-.home {
+.profile {
     font-size: 1.5rem;
     font-weight: bold;
     color: $white;   
