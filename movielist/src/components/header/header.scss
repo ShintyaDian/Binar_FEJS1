@@ -77,7 +77,7 @@
     &__button, 
     &__list {
         @include flex(center, unset);
-        gap: 1rem;
+        gap: 1.5rem;
 
         @include tablet {
             .login {
