@@ -38,49 +38,35 @@ const Register = () => {
             <input
               type="text"
               name="username"
-              // id="email"
               placeholder="Username"
-              // onChange={handleChange}
-              // required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <input
               type="email"
               name="email"
-              // id="email"
               placeholder="Email"
-              // onChange={handleChange}
-              // required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               name="password"
-              // id="email"
               placeholder="Password"
-              // onChange={handleChange}
-              // required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <input
               type="password"
               name="confirmPassword"
-              // id="email"
               placeholder="Confirm Password"
-              // onChange={handleChange}
-              // required
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
-          <div className="oAuth">
-            <button type="submit" className="btn-register" onClick={onRegister}>
-              Register
-            </button>
-          </div>
+          <button type="submit" className="btn-register" onClick={onRegister}>
+            Register
+          </button>
         </form>
         <div className="linkRegister">
           <p style={{ color: "black" }}>Already have an account?</p>

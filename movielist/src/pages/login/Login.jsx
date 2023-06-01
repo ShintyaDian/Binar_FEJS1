@@ -4,6 +4,8 @@ import "./login.scss";
 import { useDispatch } from "react-redux";
 import { googleLogin, login } from "../../redux/actions/auth";
 import { useGoogleLogin } from "@react-oauth/google";
+import GoogleIcon from "@mui/icons-material/Google";
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -56,9 +58,10 @@ const Login = () => {
             Login
           </button>
         </form>
+
         <p style={{ color: "black" }}>-or login with-</p>
         <button className="btn-google" onClick={() => onGoogle()}>
-          Google
+          <GoogleIcon /> Google
         </button>
         <div className="linkLogin">
           <p style={{ color: "black" }}>Don't have an account?</p>

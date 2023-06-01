@@ -24,66 +24,29 @@ import RedirectIfProtected from './components/RedirectIfProtected';
 
 
 const App = () => {
-  // const Layout=() =>{
-  //   return(
-  //     <>
-  //     <Header/>
-  //     <Outlet/>
-  //     <Footer/>
-  //     </>
-  //   )
-  // }
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Layout />,
-  //     children: [
-  //       {
-  //         path: "/",
-  //         element:<Home/>
-  //       },
-  //       {
-  //         path: "/register",
-  //         element:<Register/>
-  //       },
-  //       {
-  //         path: "/login",
-  //         element:<Login/>
-  //       },
-  //       {
-  //         path: "/home",
-  //         element:<Home/>
-  //       },
-  //       {
-  //         path: "/movie/search/:keyword",
-  //         element:<Catalog/>
-  //       },
-  //       {
-  //         path: "/movie",
-  //         element:<Catalog/>
-  //       },
-  //       {
-  //         path: "/movie/:id",
-  //         element:<Detail/>
-  //       },
-        
-  //     ],
-      
-  //   },
-    
-    
-  // ]);
 
   return (
     <Provider store={store}>
-      {/* <RouterProvider router={router} /> */}
       <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
         <BrowserRouter>
           <Header />
 
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route 
+              path="/" 
+              element={
+                <RedirectIfProtected>
+                  <Home />
+                </RedirectIfProtected>} 
+            />
+
+            <Route 
+              path="/home" 
+              element={
+              <Protected>
+                <Home />
+              </Protected>} 
+            />
 
             <Route 
               path="/register" 

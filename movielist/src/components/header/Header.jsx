@@ -9,6 +9,7 @@ import Button, { OutlineButton } from "../button/Button";
 
 import logo from "../../assets/film (1).png";
 import { useSelector } from "react-redux";
+import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 
 const MovieSearch = (props) => {
   const navigate = useNavigate();
@@ -73,52 +74,8 @@ const Header = (props) => {
     };
   }, []);
 
-  //   const onLogout = async (e) => {
-  //     e.preventDefault();
-  // dispatch({type: "LOGOUT"})
-  // await signOut(auth)
-  // navigate('/')
-  //   };
-
   return (
     <div ref={headerRef} className="header">
-      {/* {!user &&
-            (<div className="header__wrap container">
-                <div className="logo">
-                    <Link to={!user ? '/' : '/home'}><img src={logo} alt="" /></Link>
-                    <Link to={!user ? '/' : '/home'} className="logo__name">Movielist</Link>
-                </div>
-                <div className="search">
-                    <MovieSearch keyword={keyword}/>
-                </div>
-                <div className="header__button">
-                    <OutlineButton className="login" onClick={() => navigate('/login')}>
-                        Login
-                    </OutlineButton>
-                    <Button className="register" onClick={() => navigate('/register')}>
-                        Register
-                    </Button>
-                </div>
-            </div>)
-            }
-
-            {!!user &&
-            (<div className="header__wrap container">
-                <div className="logo">
-                    <Link to={!user ? '/' : '/home'}><img src={logo} alt="" /></Link>
-                    <Link to={!user ? '/' : '/home'} className="logo__name">Movielist</Link>
-                </div>
-                <div className="search">
-                    <MovieSearch keyword={keyword}/>
-                </div>
-                <div className="header__list">
-                    <Link to="/home" className='home'>Home</Link>
-                    <Link to="/movie" className='movies'>All Movies</Link>
-                    <button className="btn-logout" onClick={onLogout}>Logout</button>
-                </div>
-            </div>)
-            } */}
-
       {isLoggedIn ? (
         <div className="header__wrap container">
           <div className="logo">
@@ -138,6 +95,9 @@ const Header = (props) => {
             </Link>
             <Link to="/profile" className="profile">
               Profile
+            </Link>
+            <Link to="/profile" className="profile__logo">
+              <AccountCircleRoundedIcon fontSize="large" />
             </Link>
           </div>
         </div>

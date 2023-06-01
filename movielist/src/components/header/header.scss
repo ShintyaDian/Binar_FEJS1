@@ -14,14 +14,18 @@
         border-color: $main-color;
         color: $txt-color;
         font-family: $font-family;
-        width: 400px;
-    }
+        width: 500px;
 
-    @include mobile {
-        input {
+        @include tablet {
+            width: 350px;
+        }
+
+        @include mobile {
             width: 150px;
         }
     }
+
+    
 }
 
 .logo {
@@ -36,7 +40,7 @@
         display: none;
 
         @include mobile {
-            width: 30px;
+            width: 20px;
             margin-right: 0;
             display: block;
         }
@@ -84,20 +88,34 @@
             }
 
             @include flex(center, space-between);
-
-            & > * ~ * {
-                margin-left: 0;
-            }
         }
     }
 
 }
 
-.movies,
-.profile {
+.movies {
     font-size: 1.5rem;
     font-weight: bold;
     color: $white;   
+}
+
+.profile {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $white; 
+    display: block;  
+
+    @include tablet {
+        display: none;
+    }
+
+    &__logo {
+        display: none;
+
+        @include tablet {
+        display: block;
+        }
+    }
 }
 
 .btn-logout {

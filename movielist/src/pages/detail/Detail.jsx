@@ -71,8 +71,8 @@ const Detail = () => {
             </div>
           ) : (
             <div className="warning">
-              <h2 style={{ color: "black" }}>
-                -Please login/register to watch more videos-
+              <h2 style={{ color: "red" }}>
+                Please login or register to watch more videos
               </h2>
             </div>
           )}
